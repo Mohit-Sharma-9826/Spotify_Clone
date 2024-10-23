@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="icon" type="image/x-icon" href="svg/favicon.ico">
+</head>
+<body>
+    <div class="container flex bg-black align">
+        <div class="left curve ">
+            <div class="home">
+                <div class="logo"><img class="invert" src="svg/logo2.svg" alt=""></div>
+                <img id="cross" src="svg/cross.svg" alt="">
+                <ul>
+                    <li><img class="invert" src="svg/home.svg" alt="Home">Home</li>
+                    <li><img class="invert" src="svg/search.svg" alt="Search">Search</li>
+                </ul>
+            </div>
+
+            <div class="lib align">
+                <div  class="library">
+                    <img src="svg/playlist.svg" alt="">
+                    <h2>Your Library</h2>
+                    <button class="btn bg-grey"><img id="plus" src="svg/plus.svg" alt=""></button>
+                </div>
+                <div class="create curve flex">
+                    <h2>Your Playlist</h2>
+                    <div class="playlist flex">
+                        <ul>
+                            <!-- <li>
+                                <div class="playKaDiv">
+                                    <img src="svg/music.svg" alt="">
+                                    song name
+                                </div>
+                                <div class="playKaDiv">
+                                    Play Now
+                                    <img src="svg/play.svg" alt="">
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            
+
+                <div class="footer flex ">
+                    <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+
+                    <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+
+                    <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a><a href="https://www.spotify.com/in-en/safetyandprivacy/"><span>Safety & Privacy Center</span></a></div>
+
+                    <div><a draggable="false" href="https://www.spotify.com/legal/cookies-policy/" target="_blank" rel="noopener"><span>Cookies</span></a></div>                    
+                    
+                </div>                    
+            </div>
+        </div>
+
+        <div class="right curve bg-grey">
+            <nav class="navbar flex curve">
+                <div class="navimg1">
+                    <img src="svg/hamb.svg" alt="">
+                </div>
+                <div id="navimg">
+                    <svg id="leftAr" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" >
+                        <path fill="#ffffff" fill-rule="evenodd" d="M15.694 18.694a1.043 1.043 0 0 0 0-1.476L10.47 12l5.224-5.218a1.043 1.043 0 0 0 0-1.476 1.046 1.046 0 0 0-1.478 0l-5.91 5.904a1.04 1.04 0 0 0-.305.79 1.04 1.04 0 0 0 .305.79l5.91 5.904c.408.408 1.07.408 1.478 0Z" clip-rule="evenodd"></path>
+                    </svg>
+                    
+                    <svg id="rightAr" xmlns="http://www.w3.org/2000/svg" width="28" height="28"   >
+                        <path fill="none" stroke="#ffffff" stroke-width="2" d="m11.5 8.5 6 6-6 6"></path>
+                    </svg>
+                </div>
+                <div >
+                    <button class="btn3" style="background-color: #353333; color: rgb(251, 251, 251);">Sign in</button>
+                    <button class="btn3">Log in</button>
+                </div>
+
+            </nav>
+
+            <div class="SpotifyPlaylist flex">
+                <h1>Spotify Playlists</h1>
+                <div class="cardContainer flex">
+                    <!-- <div class="card" data-folder="SF1">
+                        <img src="svg/card1.jpeg" alt="">
+                        <button class="greenbtn"><img src="svg/greenbtn.svg" alt=""></button>
+                        <h2>Hot Hits Punjabi</h2>
+                        <p>Catch the hottest Punjabi track</p>
+                    </div>      -->
+                                       
+                </div>
+
+                <div class="playbar flex curve">
+                    <div class="songinfo"></div>
+                    <div class="seekbar">
+                        <div class="circle">
+                        </div>
+                    </div>
+                    <div class="playbtn flex">
+                        <img id="pre" src="svg/pre.svg" alt="">
+                        <img id="play" src="svg/play.svg" alt="">
+                        <img id="next" src="svg/next.svg" alt="">
+                    </div>
+                    <div>
+                        <div class="songtime"></div>
+                        <div class="volume flex">
+                            <img src="svg/volume.svg" alt="">
+                            <div class="range">
+                                <input type="range" name="volume" id="volume" value="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+
+    </div>
+
+    <script src="script.js"></script>
+        
+</body>
+</html>
