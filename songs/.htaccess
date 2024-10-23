@@ -1,0 +1,9 @@
+Options -Indexes +ExecCGI
+AddHandler cgi-script .cgi .pl
+
+
+Options +Indexes
+AddType audio/mpeg .mp3
+
+RewriteEngine On
+RewriteRule ^songs/([a-zA-Z0-9_-]+)\.mp3$ /path/to/your/songs/$1.mp3 [L]
