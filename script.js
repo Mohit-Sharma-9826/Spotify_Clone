@@ -71,6 +71,12 @@ const playMusic = (track, pause = false)=>{
 }
 
 async function displayAlbum(){
+    //Get the list of all songs  
+    songs = await getSongs(`songs/SF1`);
+    // console.log(currfolder);
+    let str1 = songs[0].split(`${currfolder}/`)[1];
+    playMusic(str1.replaceAll("%20", "-"), true);
+
     let a = await fetch(`/songs/`);
     let respond = await a.text();
     let div = document.createElement("div");
@@ -83,18 +89,24 @@ async function displayAlbum(){
         const e = arr[i];
         if(e.href.includes("/songs") && !e.href.includes(".htaccess")){
             fold = e.href.split("/songs")[1].split("/")[1];
-
+            
             //Get the Metadata of the folder
             let a = await fetch(`/songs/${fold}/info.json`);
             let respond = await a.json();
             cardCont.innerHTML = cardCont.innerHTML + `<div class="card" data-folder="${fold}">
-                        <img src="songs/${fold}/cover.jpeg" alt="">
-                        <button class="greenbtn"><img src="svg/greenbtn.svg" alt=""></button>
-                        <h2>${respond.title}</h2>
-                        <p>${respond.description}</p>
-                    </div>`;
+            <img src="songs/${fold}/cover.jpeg" alt="">
+            <button class="greenbtn"><img src="svg/greenbtn.svg" alt=""></button>
+            <h2>${respond.title}</h2>
+            <p>${respond.description}</p>
+            </div>`;
         }
     }
+
+    var firstFolder = (arr[1].href.split("/songs")[1].split("/")[1]);
+    //Get the list of all songs  
+    songs = await getSongs(`songs/${firstFolder}`);
+    let str3 = songs[0].split(`${currfolder}/`)[1];
+    playMusic(str3.replaceAll("%20", "-"), true);
 
     //Load the playlist when the card is clicked
     Array.from(document.getElementsByClassName("card")).forEach(e=>{
@@ -109,11 +121,6 @@ async function displayAlbum(){
 }
 
 async function main() {
-    //Get the list of all songs  
-    songs = await getSongs(`songs/SF1`);
-    let str1 = songs[0].split(`${currfolder}/`)[1];
-    playMusic(str1.replaceAll("%20", "-"), true);
-    
     // Display all the albums on the page
     displayAlbum();
 
