@@ -71,12 +71,6 @@ const playMusic = (track, pause = false)=>{
 }
 
 async function displayAlbum(){
-    //Get the list of all songs  
-    songs = await getSongs(`songs/SF1`);
-    // console.log(currfolder);
-    let str1 = songs[0].split(`${currfolder}/`)[1];
-    playMusic(str1.replaceAll("%20", "-"), true);
-
     let a = await fetch(`/songs/`);
     let respond = await a.text();
     let div = document.createElement("div");
